@@ -37,6 +37,7 @@ COMPOSE_PROJECT_NAME=spare-croston；FRONTEND_PORT=18214；BACKEND_PORT=19214；
 错误响应、请求编号、Redis 每 IP 每分钟 240 次限流、JWT 和数据库操作审计。演示密钥与密码仅供本机模拟；生产部署前配置独立密钥与账号。
 
 ## 数据与验收
+预测试算默认自动选参：末 28 天为独立检验期不参与打分，候选仅在较早日历上滚动评分（详见 BUSINESS.md 算法契约）；`selection=manual` 与缺少该键的历史任务沿用原手选口径，已完成结果与分发简报不重算、不改写。
 所有数据为固定随机种子生成的模拟业务数据，不能作为实际生产决策证据。项目独立算法、输入边界及业务局限详见 BUSINESS.md。测试与截图统一存放 ../../test-artifacts/gb-1015/，源码不含日志/截图/测试报告。
 清理本项目演示数据：`docker compose down -v --remove-orphans`（会删除本项目命名卷）。
 
